@@ -14,8 +14,8 @@
         <property name="file">
             <column name="File" sql-type="blob"/>
         </property>
-        <property name="userId">
-            <column name="UserId" sql-type="int(11)"/>
+        <property name="username">
+            <column name="Username" sql-type="varchar(128)"/>
         </property>
     </class>
 </hibernate-mapping>

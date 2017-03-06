@@ -26,30 +26,7 @@ import com.mysql.jdbc.PreparedStatement;
 
 import java.sql.SQLException;
 
-/*import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
-import com.mysql.jdbc.Statement;
-import crypt.md5Crypt;
-import hibernate.Util.HibernateUtil;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-import models.UsersEntity;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 
-import java.net.URL;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.util.ResourceBundle;*/
 
 /**
  * Created by rask on 01.03.2017.
@@ -71,23 +48,19 @@ public class CatalogController {
     public void initialize() throws SQLException, ClassNotFoundException {
 
         lblTextMessage.setText(UserRepository.getInstance().getName());
-        FileDataAccessor dataAccessor = new FileDataAccessor("jdbc:mysql://localhost:3306/catalogdb?useSSL=false", "root", "root"); // provide driverName, dbURL, user, password...
 
-        TableView<FileRepository> personTable = new TableView<>();
-        TableColumn<FileRepository, String> firstNameCol = new TableColumn<>("File Name");
-        firstNameCol.setCellValueFactory(new PropertyValueFactory<FileRepository, String>("fileName"));
-
-
-        tableView.getColumns().addAll(firstNameCol);
-
-        tableView.getItems().addAll(dataAccessor.getPersonList());
+        updateTableView();
 
     }
 
     public void searchAction(ActionEvent actionEvent) {
+
+        String text = srchText.getText();
+
+
     }
 
-    public void uploadActionButton(ActionEvent actionEvent) throws SQLException, IOException {
+    public void uploadActionButton(ActionEvent actionEvent) throws SQLException, IOException, ClassNotFoundException {
 
         //String updateSQL = "UPDATE files " + "SET file = ? " + "WHERE userid=?";
 
@@ -115,11 +88,11 @@ public class CatalogController {
             inputStream.read(array);
 
 
-            String query = "insert into files (filename, file, userId)" + " values (?, ?, ?)";
+            String query = "insert into files (filename, file, username)" + " values (?, ?, ?)";
             PreparedStatement pstmt = (PreparedStatement)con.prepareStatement(query);
             pstmt.setString(1, selectedFile.getName());
             pstmt.setBytes(2, array);
-            pstmt.setInt(3, UserRepository.getInstance().getId());
+            pstmt.setString(3, UserRepository.getInstance().getName());
 
             /*Statement stmt = (Statement) conn.createStatement();
             String query = "SELECT Id, Connected FROM users;";
@@ -155,46 +128,36 @@ public class CatalogController {
 
         pstmt.execute();
 
-            con.commit();
+//            con.commit();
 
-            con.close();
+        con.close();
 
-            //Creating new column in files table
+        updateTableView();
 
-            /*SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-            Session session = sessionFactory.openSession();
-
-
-            Blob blob = (Blob) Hibernate.getLobCreator(session)
-                    .createBlob(inputStream, selectedFile.length());
-
-           // FilesEntity file = new FilesEntity(selectedFile.getName(), id, blob);
-
-            session.beginTransaction();
-            //session.save(file);
-            session.getTransaction().commit();
-            session.close();*/
-
-            // read the file
-            //File file = new File(filename);
-
-
-            // set parameters
-            /*pstmt.setBinaryStream(1, inputStream);
-            pstmt.setInt(2, id);
-
-            // store the resume file in database
-            System.out.println("Reading file " + selectedFile.getAbsolutePath());
-            System.out.println("Store file in the database.");
-            pstmt.executeUpdate();*/
-
-        /*} catch (SQLException | FileNotFoundException e) {
-            System.out.println(e.getMessage());
-        }*/
-        //}catch (SQLException e) {
 
     }
 
     public void deleteActionButton(ActionEvent actionEvent) {
+    }
+
+    public void updateTableView() throws SQLException, ClassNotFoundException {
+
+
+        FileDataAccessor dataAccessor = new FileDataAccessor("jdbc:mysql://localhost:3306/catalogdb?useSSL=false", "root", "root"); // provide driverName, dbURL, user, password...
+
+        TableView<FileRepository> personTable = new TableView<>();
+        TableColumn<FileRepository, String> firstNameCol = new TableColumn<>("File Name");
+        firstNameCol.setCellValueFactory(new PropertyValueFactory<FileRepository, String>("fileName"));
+        TableColumn<FileRepository, String> usernameCol = new TableColumn<>("User");
+        usernameCol.setCellValueFactory(new PropertyValueFactory<FileRepository, String>("username"));
+
+
+        tableView.getItems().clear();
+        if(tableView.getColumns().isEmpty())
+            tableView.getColumns().addAll(firstNameCol, usernameCol);
+
+
+        tableView.getItems().addAll(dataAccessor.getPersonList());
+
     }
 }

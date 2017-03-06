@@ -19,10 +19,22 @@ public class FileRepository {
         fileNameProperty().set(fileName);
     }
 
+    private final StringProperty username = new SimpleStringProperty(this, "username");
+    public StringProperty usernameProperty() {
+        return username ;
+    }
+    public final String getUsername() {
+        return usernameProperty().get();
+    }
+    public final void setUsername(String username) {
+        usernameProperty().set(username);
+    }
+
     public FileRepository() {}
 
-    public FileRepository(String fileName) {
+    public FileRepository(String fileName, String username) {
         setFileName(fileName);
+        setUsername(username);
         }
 
 }

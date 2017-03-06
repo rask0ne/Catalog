@@ -14,7 +14,7 @@ public class FilesEntity {
     private int id;
     private String filename;
     private byte[] file;
-    private int userId;
+    private String username;
 
     public FilesEntity() {
     }
@@ -50,13 +50,13 @@ public class FilesEntity {
     }
 
     @Basic
-    @Column(name = "UserId", nullable = false)
-    public int getUserId() {
-        return userId;
+    @Column(name = "Username", nullable = false)
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Override
@@ -67,7 +67,8 @@ public class FilesEntity {
         FilesEntity that = (FilesEntity) o;
 
         if (id != that.id) return false;
-        if (userId != that.userId) return false;
+        //if (userId != that.userId) return false;
+        if (username != null ? !username.equals(that.username) : that.username != null) return false;
         if (filename != null ? !filename.equals(that.filename) : that.filename != null) return false;
         if (!Arrays.equals(file, that.file)) return false;
 
@@ -86,7 +87,8 @@ public class FilesEntity {
         int result = id;
         result = 31 * result + (filename != null ? filename.hashCode() : 0);
         result = 31 * result + Arrays.hashCode(file);
-        result = 31 * result + userId;
+        result = 31 * result + (username != null ? username.hashCode() : 0);
+       // result = 31 * result + userId;
         return result;
     }
 }

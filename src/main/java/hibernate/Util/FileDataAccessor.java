@@ -31,12 +31,13 @@ public class FileDataAccessor {
     public List<FileRepository> getPersonList() throws SQLException {
 
         Statement stmnt = connection.createStatement();
-        ResultSet rs = stmnt.executeQuery("select filename from files");
+        ResultSet rs = stmnt.executeQuery("select filename, username from files");
         {
             List<FileRepository> filesList = new ArrayList<>();
             while (rs.next()) {
                 String fileName = rs.getString("Filename");
-                FileRepository file = new FileRepository(fileName);
+                String username = rs.getString("Username");
+                FileRepository file = new FileRepository(fileName, username);
                 filesList.add(file);
             }
             return filesList ;
