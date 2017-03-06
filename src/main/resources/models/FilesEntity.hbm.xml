@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="models.FilesEntity" table="files" schema="catalogdb">
+        <id name="id">
+            <column name="Id" sql-type="int(11)"/>
+        </id>
+        <property name="filename">
+            <column name="Filename" sql-type="varchar(255)"/>
+        </property>
+        <property name="file">
+            <column name="File" sql-type="blob"/>
+        </property>
+        <property name="userId">
+            <column name="UserId" sql-type="int(11)"/>
+        </property>
+    </class>
+</hibernate-mapping>
