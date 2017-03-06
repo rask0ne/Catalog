@@ -1,6 +1,7 @@
 package hibernate.Util;
 
 import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 import repositories.FileRepository;
 
 import java.sql.DriverManager;
@@ -28,13 +29,32 @@ public class FileDataAccessor {
         }
     }
 
-    public List<FileRepository> getPersonList() throws SQLException {
+    public List<FileRepository> getFileList() throws SQLException {
 
         Statement stmnt = connection.createStatement();
         ResultSet rs = stmnt.executeQuery("select filename, username from files");
         {
             List<FileRepository> filesList = new ArrayList<>();
             while (rs.next()) {
+                String fileName = rs.getString("Filename");
+                String username = rs.getString("Username");
+                FileRepository file = new FileRepository(fileName, username);
+                filesList.add(file);
+            }
+            return filesList ;
+        }
+    }
+
+    public List<FileRepository> getSearchFileList(String name) throws SQLException {
+
+        String task = "select filename, username from files where filename like ? or username like ?";
+        PreparedStatement stmnt = (PreparedStatement) connection.prepareStatement(task);
+        stmnt.setString(1, "%" + name + "%");
+        stmnt.setString(2, "%" + name + "%");
+        ResultSet rs = stmnt.executeQuery();
+        {
+            List<FileRepository> filesList = new ArrayList<>();
+            while (rs.next()){
                 String fileName = rs.getString("Filename");
                 String username = rs.getString("Username");
                 FileRepository file = new FileRepository(fileName, username);

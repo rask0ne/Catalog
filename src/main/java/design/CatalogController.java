@@ -53,10 +53,11 @@ public class CatalogController {
 
     }
 
-    public void searchAction(ActionEvent actionEvent) {
+    public void searchAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
         String text = srchText.getText();
 
+        updateTableView(text);
 
     }
 
@@ -137,7 +138,31 @@ public class CatalogController {
 
     }
 
-    public void deleteActionButton(ActionEvent actionEvent) {
+    public void deleteActionButton(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+
+        FileRepository file = (FileRepository) tableView.getSelectionModel().getSelectedItem();
+
+
+
+        if(file.getUsername().equals(UserRepository.getInstance().getName())
+                || UserRepository.getInstance().getName().equals("admin")) {
+
+            Connection con = (Connection) DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/catalogdb?autoReconnect=true&useSSL=false", "root", "root");
+
+            String query = "delete from files where filename = ? and username = ?";
+            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(query);
+            pstmt.setString(1, file.getFileName());
+            pstmt.setString(2, file.getUsername());
+            pstmt.execute();
+            pstmt = (PreparedStatement) con.prepareStatement("alter table files auto_increment = 1");
+            pstmt.execute();
+
+            con.close();
+
+            updateTableView();
+        }
+
     }
 
     public void updateTableView() throws SQLException, ClassNotFoundException {
@@ -157,7 +182,28 @@ public class CatalogController {
             tableView.getColumns().addAll(firstNameCol, usernameCol);
 
 
-        tableView.getItems().addAll(dataAccessor.getPersonList());
+        tableView.getItems().addAll(dataAccessor.getFileList());
+
+    }
+
+    public void updateTableView(String name) throws SQLException, ClassNotFoundException {
+
+
+        FileDataAccessor dataAccessor = new FileDataAccessor("jdbc:mysql://localhost:3306/catalogdb?useSSL=false", "root", "root"); // provide driverName, dbURL, user, password...
+
+        TableView<FileRepository> personTable = new TableView<>();
+        TableColumn<FileRepository, String> firstNameCol = new TableColumn<>("File Name");
+        firstNameCol.setCellValueFactory(new PropertyValueFactory<FileRepository, String>("fileName"));
+        TableColumn<FileRepository, String> usernameCol = new TableColumn<>("User");
+        usernameCol.setCellValueFactory(new PropertyValueFactory<FileRepository, String>("username"));
+
+
+        tableView.getItems().clear();
+        if(tableView.getColumns().isEmpty())
+            tableView.getColumns().addAll(firstNameCol, usernameCol);
+
+
+        tableView.getItems().addAll(dataAccessor.getSearchFileList(name));
 
     }
 }
