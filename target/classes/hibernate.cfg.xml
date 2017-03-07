@@ -27,6 +27,8 @@
     <mapping class="models.FilesEntity"/>
     <mapping resource="models/UsersEntity.hbm.xml"/>
     <mapping class="models.UsersEntity"/>
+    <mapping resource="models/HistoryEntity.hbm.xml"/>
+    <mapping class="models.HistoryEntity"/>
     <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
 

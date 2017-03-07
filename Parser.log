@@ -1,0 +1,83 @@
+2017-03-07 05:02:47 INFO  Login:22 - Window 'Login' created
+2017-03-07 05:03:03 INFO  LoginController:42 - Login button pressed
+2017-03-07 05:03:04 INFO  LoginController:53 - Connection to DB established
+2017-03-07 05:03:04 INFO  LoginController:64 - User entered successfully
+2017-03-07 05:03:04 INFO  LoginController:74 - User singleton created
+2017-03-07 05:03:04 INFO  LoginController:77 - Connection to DB closed
+2017-03-07 05:03:04 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 05:03:04 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 05:03:04 INFO  CatalogController:202 - TableView updated
+2017-03-07 05:03:04 INFO  LoginController:89 - Window 'Catalog' created
+2017-03-07 05:03:06 INFO  CatalogController:74 - Upload button pressed
+2017-03-07 05:03:06 INFO  CatalogController:79 - User tries to upload file
+2017-03-07 05:03:06 INFO  CatalogController:98 - User has some free space today
+2017-03-07 05:03:23 INFO  CatalogController:114 - File selected
+2017-03-07 05:03:23 INFO  CatalogController:124 - File uploaded into database
+2017-03-07 05:03:23 INFO  CatalogController:135 - Saved info about this upload session
+2017-03-07 05:03:23 INFO  CatalogController:139 - Connection to DB closed
+2017-03-07 05:03:23 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 05:03:23 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 05:03:23 INFO  CatalogController:202 - TableView updated
+2017-03-07 05:14:56 INFO  Login:22 - Window 'Login' created
+2017-03-07 05:15:17 INFO  LoginController:42 - Login button pressed
+2017-03-07 05:15:18 INFO  LoginController:53 - Connection to DB established
+2017-03-07 05:15:18 INFO  LoginController:64 - User entered successfully
+2017-03-07 05:15:18 INFO  LoginController:74 - User singleton created
+2017-03-07 05:15:18 INFO  LoginController:77 - Connection to DB closed
+2017-03-07 05:15:18 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 05:15:18 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 05:15:18 INFO  CatalogController:204 - TableView updated
+2017-03-07 05:15:18 INFO  LoginController:89 - Window 'Catalog' created
+2017-03-07 05:15:21 INFO  CatalogController:155 - Selected file to delete
+2017-03-07 05:15:21 INFO  CatalogController:163 - Connection to DB established
+2017-03-07 05:15:21 INFO  CatalogController:173 - File deleted from DB
+2017-03-07 05:15:21 INFO  CatalogController:177 - Connection to DB closed
+2017-03-07 05:15:21 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 05:15:21 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 05:15:21 INFO  CatalogController:204 - TableView updated
+2017-03-07 05:15:32 INFO  CatalogController:155 - Selected file to delete
+2017-03-07 05:15:32 INFO  CatalogController:163 - Connection to DB established
+2017-03-07 05:15:32 INFO  CatalogController:173 - File deleted from DB
+2017-03-07 05:15:32 INFO  CatalogController:177 - Connection to DB closed
+2017-03-07 05:15:32 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 05:15:32 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 05:15:32 INFO  CatalogController:204 - TableView updated
+2017-03-07 05:15:35 INFO  CatalogController:74 - Upload button pressed
+2017-03-07 05:15:35 INFO  CatalogController:79 - User tries to upload file
+2017-03-07 05:15:35 INFO  CatalogController:98 - User has some free space today
+2017-03-07 05:15:43 INFO  CatalogController:116 - File selected
+2017-03-07 05:15:50 INFO  CatalogController:74 - Upload button pressed
+2017-03-07 05:15:50 INFO  CatalogController:79 - User tries to upload file
+2017-03-07 05:15:50 INFO  CatalogController:98 - User has some free space today
+2017-03-07 05:16:13 INFO  CatalogController:116 - File selected
+2017-03-07 05:16:14 INFO  CatalogController:74 - Upload button pressed
+2017-03-07 05:16:14 INFO  CatalogController:79 - User tries to upload file
+2017-03-07 05:16:14 INFO  CatalogController:98 - User has some free space today
+2017-03-07 05:16:19 INFO  CatalogController:116 - File selected
+2017-03-07 05:16:24 INFO  FileRepository:56 - Connection to DB established
+2017-03-07 05:16:26 INFO  FileRepository:79 - File opened  successfully
+2017-03-07 05:16:26 INFO  FileRepository:82 - Connection to DB closed
+2017-03-07 05:16:26 INFO  CatalogController:74 - Upload button pressed
+2017-03-07 05:16:26 INFO  CatalogController:79 - User tries to upload file
+2017-03-07 05:16:26 INFO  CatalogController:98 - User has some free space today
+2017-03-07 05:16:31 INFO  CatalogController:116 - File selected
+2017-03-07 05:16:31 INFO  CatalogController:126 - File uploaded into database
+2017-03-07 05:16:31 INFO  CatalogController:137 - Saved info about this upload session
+2017-03-07 05:16:31 INFO  CatalogController:141 - Connection to DB closed
+2017-03-07 05:16:31 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 05:16:31 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 05:16:31 INFO  CatalogController:204 - TableView updated
+2017-03-07 05:16:33 INFO  CatalogController:74 - Upload button pressed
+2017-03-07 05:16:33 INFO  CatalogController:79 - User tries to upload file
+2017-03-07 05:16:33 INFO  CatalogController:98 - User has some free space today
+2017-03-07 05:16:51 INFO  CatalogController:116 - File selected
+2017-03-07 05:16:51 INFO  CatalogController:126 - File uploaded into database
+2017-03-07 05:16:51 INFO  CatalogController:137 - Saved info about this upload session
+2017-03-07 05:16:51 INFO  CatalogController:141 - Connection to DB closed
+2017-03-07 05:16:51 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 05:16:51 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 05:16:51 INFO  CatalogController:204 - TableView updated
+2017-03-07 05:16:55 INFO  FileRepository:56 - Connection to DB established
+2017-03-07 05:16:56 INFO  FileRepository:79 - File opened  successfully
+2017-03-07 05:16:56 INFO  FileRepository:82 - Connection to DB closed
+2017-03-07 05:35:33 INFO  FileDataAccessor:28 - Connection to DB establihed

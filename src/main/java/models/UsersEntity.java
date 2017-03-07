@@ -1,7 +1,5 @@
 package models;
 
-import hibernate.Util.UserRoles;
-
 import javax.persistence.*;
 
 /**

@@ -2,6 +2,8 @@ package hibernate.Util;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
+import design.Login;
+import org.apache.log4j.Logger;
 import repositories.FileRepository;
 
 import java.sql.DriverManager;
@@ -18,9 +20,12 @@ public class FileDataAccessor {
 
     private Connection connection ;
 
+    private final Logger logger = Logger.getLogger(FileDataAccessor.class);
+
     public FileDataAccessor(String dbURL, String user, String password) throws SQLException, ClassNotFoundException {
         //Class.forName(driverClassName);
         connection = (Connection) DriverManager.getConnection(dbURL, user, password);
+        logger.info("Connection to DB establihed");
     }
 
     public void shutdown() throws SQLException {
@@ -41,6 +46,7 @@ public class FileDataAccessor {
                 FileRepository file = new FileRepository(fileName, username);
                 filesList.add(file);
             }
+            logger.info("Created full list of file for tableView");
             return filesList ;
         }
     }
@@ -60,6 +66,7 @@ public class FileDataAccessor {
                 FileRepository file = new FileRepository(fileName, username);
                 filesList.add(file);
             }
+            logger.info("Created list of files for tableView which were searched");
             return filesList ;
         }
     }

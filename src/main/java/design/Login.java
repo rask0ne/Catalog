@@ -5,8 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.apache.log4j.Logger;
 
 public class Login extends Application {
+
+    private final Logger logger = Logger.getLogger(Login.class);
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -15,6 +18,8 @@ public class Login extends Application {
         primaryStage.setTitle("Login");
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
+
+        logger.info("Window 'Login' created");
     }
 
 

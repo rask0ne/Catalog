@@ -2,8 +2,10 @@ package repositories;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
+import design.Catalog;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import org.apache.log4j.Logger;
 
 import java.awt.*;
 import java.io.*;
@@ -17,6 +19,7 @@ import java.sql.SQLException;
  */
 public class FileRepository {
 
+    private final Logger logger = Logger.getLogger(FileRepository.class);
     private final StringProperty fileName = new SimpleStringProperty(this, "fileName");
     public StringProperty fileNameProperty() {
         return fileName ;
@@ -50,6 +53,7 @@ public class FileRepository {
 
         Connection conn = (Connection) DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/catalogdb?autoReconnect=true&useSSL=false", "root", "root");
+        logger.info("Connection to DB established");
         String sql = "SELECT file FROM files WHERE filename =? AND username=?";
         PreparedStatement statement = (PreparedStatement) conn.prepareStatement(sql);
         statement.setString(1, getFileName());
@@ -72,9 +76,10 @@ public class FileRepository {
 
             File file = new File("E:/temp/" + getFileName());
             Desktop.getDesktop().open(file);
-
+            logger.info("File opened  successfully");
         }
         conn.close();
+        logger.info("Connection to DB closed");
 
     }
 

@@ -1,6 +1,8 @@
 package hibernate.Util;
 
 
+        import design.Register;
+        import org.apache.log4j.Logger;
         import org.hibernate.SessionFactory;
         import org.hibernate.boot.MetadataSources;
         import org.hibernate.boot.registry.StandardServiceRegistry;
@@ -16,7 +18,8 @@ public class HibernateUtil {
             // loads configuration and mappings
             Configuration configuration = new Configuration().addFile("C:\\Users\\rask\\IdeaProjects\\Catalog\\src\\main\\resources\\hibernate.cfg.xml")
                     .addFile("C:\\Users\\rask\\IdeaProjects\\Catalog\\src\\main\\resources\\models\\FilesEntity.hbm.xml")
-                    .addFile("C:\\Users\\rask\\IdeaProjects\\Catalog\\src\\main\\resources\\models\\UsersEntity.hbm.xml").configure();
+                    .addFile("C:\\Users\\rask\\IdeaProjects\\Catalog\\src\\main\\resources\\models\\UsersEntity.hbm.xml")
+                    .addFile("C:\\Users\\rask\\IdeaProjects\\Catalog\\src\\main\\resources\\models\\HistoryEntity.hbm.xml").configure();
             ServiceRegistry serviceRegistry
                     = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();

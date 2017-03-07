@@ -17,6 +17,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import models.UsersEntity;
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -40,6 +41,8 @@ public class RegisterController implements Initializable {
     @FXML
     private PasswordField txtPassword;
 
+    private final Logger logger = Logger.getLogger(RegisterController.class);
+
     public void passwordTextButtonAction(ActionEvent actionEvent) {
     }
 
@@ -47,6 +50,8 @@ public class RegisterController implements Initializable {
     }
 
     public void registerButtonAction(ActionEvent actionEvent) throws Exception{
+
+        logger.info("Register button pressed");
 
         boolean check = true;
         String query;
@@ -56,6 +61,7 @@ public class RegisterController implements Initializable {
         password = new md5Crypt().md5Apache(password);
 
         Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/catalogdb?autoReconnect=true&useSSL=false", "root", "root");
+        logger.info("Connection to DB established");
         Statement stmt = (Statement) con.createStatement();
         query = "SELECT Username FROM users;";
         stmt.executeQuery(query);
@@ -84,23 +90,12 @@ public class RegisterController implements Initializable {
             preparedStmt.setInt(3, 2);
             preparedStmt.execute();
 
+            logger.info("Created new user profile");
+
             con.close();
-            /*SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-            Session session = sessionFactory.openSession();
-            session.beginTransaction();
 
-            user.setUsername(username);
-            user.setPassword(password);
-            user.setRole(2);
+            logger.info("Connection closed");
 
-            //Save the employee in database
-            session.save(user);
-
-            //Commit the transaction
-            session.getTransaction().commit();
-            session.close();*/
-
-            user = null;
 
             ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
 
@@ -110,6 +105,8 @@ public class RegisterController implements Initializable {
             stage.setScene(scene);
             stage.setTitle("Login");
             stage.show();
+
+            logger.info("Created window 'Login'");
 
         }
 
