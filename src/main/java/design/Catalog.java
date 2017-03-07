@@ -14,6 +14,10 @@ import repositories.UserRepository;
 /**
  * Created by rask on 01.03.2017.
  */
+
+/**
+ * Logic of 'Catalog' window.
+ */
 public class Catalog extends Application {
 
     private final Logger logger = Logger.getLogger(Catalog.class);

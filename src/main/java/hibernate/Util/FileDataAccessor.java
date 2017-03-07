@@ -16,24 +16,46 @@ import java.util.List;
 /**
  * Created by rask on 06.03.2017.
  */
+
+/**
+ * Class to connect database with table in 'Catalog'.
+ */
 public class FileDataAccessor {
 
     private Connection connection ;
 
     private final Logger logger = Logger.getLogger(FileDataAccessor.class);
 
+    /**
+     * Method to establish connection to the database.
+     * @param dbURL URL to database.
+     * @param user  username
+     * @param password password
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     public FileDataAccessor(String dbURL, String user, String password) throws SQLException, ClassNotFoundException {
         //Class.forName(driverClassName);
         connection = (Connection) DriverManager.getConnection(dbURL, user, password);
         logger.info("Connection to DB establihed");
     }
 
+    /**
+     * Method to close connection to the database.
+     * @throws SQLException
+     */
     public void shutdown() throws SQLException {
         if (connection != null) {
             connection.close();
         }
     }
 
+    /**
+     * Creating list of all files to import it into table in 'Catalog' window.
+     *
+     * @return list of files to integrate.
+     * @throws SQLException
+     */
     public List<FileRepository> getFileList() throws SQLException {
 
         Statement stmnt = connection.createStatement();
@@ -51,6 +73,12 @@ public class FileDataAccessor {
         }
     }
 
+    /**
+     * Creating list of files which comparable with search string.
+     * @param name string to compare
+     * @return list of files to integrate.
+     * @throws SQLException
+     */
     public List<FileRepository> getSearchFileList(String name) throws SQLException {
 
         String task = "select filename, username from files where filename like ? or username like ?";

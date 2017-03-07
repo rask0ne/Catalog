@@ -17,9 +17,15 @@ import java.sql.SQLException;
 /**
  * Created by rask on 03.03.2017.
  */
+
+/**
+ * Class to store information about file into object to integrage in list of files
+ * for table in 'Catalog' window.
+ */
 public class FileRepository {
 
     private final Logger logger = Logger.getLogger(FileRepository.class);
+
     private final StringProperty fileName = new SimpleStringProperty(this, "fileName");
     public StringProperty fileNameProperty() {
         return fileName ;
@@ -49,6 +55,11 @@ public class FileRepository {
         setUsername(username);
     }
 
+    /**
+     * Method to load file from database and then run it on computer with process.
+     * @throws SQLException
+     * @throws IOException
+     */
     public void execution() throws SQLException, IOException {
 
         Connection conn = (Connection) DriverManager.getConnection(

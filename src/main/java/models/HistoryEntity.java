@@ -7,6 +7,10 @@ import java.util.Arrays;
 /**
  * Created by rask on 07.03.2017.
  */
+
+/**
+ * Entity for history table in the database.
+ */
 @Entity
 @Table(name = "history", schema = "catalogdb", catalog = "")
 public class HistoryEntity {

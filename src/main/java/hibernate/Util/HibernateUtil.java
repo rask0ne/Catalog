@@ -10,6 +10,10 @@ package hibernate.Util;
         import org.hibernate.cfg.Configuration;
         import org.hibernate.service.ServiceRegistry;
 
+/**
+ * Class to work with SessionFactory, which is required in hibernate to import
+ * data like an object into table cells of databasa.
+ */
 public class HibernateUtil {
     private static SessionFactory sessionFactory;
 

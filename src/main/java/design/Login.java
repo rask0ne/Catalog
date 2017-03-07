@@ -7,6 +7,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 
+/**
+ * Logic of 'Login' window.
+ */
 public class Login extends Application {
 
     private final Logger logger = Logger.getLogger(Login.class);

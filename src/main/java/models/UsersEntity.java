@@ -5,6 +5,10 @@ import javax.persistence.*;
 /**
  * Created by rask on 03.03.2017.
  */
+
+/**
+ * Entity for users table in the database.
+ */
 @Entity
 @Table(name = "users", schema = "catalogdb", catalog = "")
 public class UsersEntity {

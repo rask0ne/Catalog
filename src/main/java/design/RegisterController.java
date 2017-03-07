@@ -31,24 +31,35 @@ import java.util.ResourceBundle;
  */
 
 
-
-public class RegisterController implements Initializable {
+/**
+ * Controller of 'Register' window.
+ */
+public class RegisterController{
 
     @FXML
     private Label lblMessage;
+    /**
+     * Field to enter username string.
+     */
     @FXML
     private TextField txtUsername;
+    /**
+     * Field to enter password string.
+     */
     @FXML
     private PasswordField txtPassword;
 
     private final Logger logger = Logger.getLogger(RegisterController.class);
 
-    public void passwordTextButtonAction(ActionEvent actionEvent) {
-    }
-
-    public void usernameTextButtonAction(ActionEvent actionEvent) {
-    }
-
+    /**
+     * Button which is responsible for registration of new users.
+     * Reads info from username, password TextFields, then takes place
+     * comparison if there is a coincidence with some users, which are already
+     * registered. If not, adding new user to the users database. Creating
+     * 'Login' window.
+     * @param actionEvent
+     * @throws Exception
+     */
     public void registerButtonAction(ActionEvent actionEvent) throws Exception{
 
         logger.info("Register button pressed");
@@ -112,7 +123,4 @@ public class RegisterController implements Initializable {
 
     }
 
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
 }

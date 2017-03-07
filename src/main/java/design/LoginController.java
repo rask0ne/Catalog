@@ -21,22 +21,35 @@ import repositories.UserRepository;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 
+/**
+ * Controller of 'Login' window.
+ */
 public class LoginController {
+
 
     @FXML
     private Label lblMessage;
+    /**
+     * TextField to insert username string.
+     */
     @FXML
     private TextField txtUsername;
     @FXML
+    /**
+     * TextField to insert password string
+     */
     private PasswordField txtPassword;
 
     private final Logger logger = Logger.getLogger(LoginController.class);
 
-    public void passwordTextButtonAction(ActionEvent actionEvent) {
-
-
-    }
-
+    /**
+     * loginButton action method. Gets data from username and password TextFields.
+     * There is a check in method for concurrences with users database. If everything
+     * is OK, creating singleton object of user with all main info about user.
+     * Then creating a 'Catalog' window.
+     * @param actionEvent
+     * @throws Exception
+     */
     public void loginButtonAction(ActionEvent actionEvent) throws Exception {
 
         logger.info("Login button pressed");
@@ -96,9 +109,12 @@ public class LoginController {
 
     }
 
-    public void usernameTextButtonAction(ActionEvent actionEvent) {
-    }
-
+    /**
+     * Entering catalog without authorization. Creating a singleton object of user class
+     * to keep some info. Creating window 'Catalog'.
+     * @param actionEvent
+     * @throws Exception
+     */
     public void guestAction(ActionEvent actionEvent) throws Exception{
 
         UserRepository user = new UserRepository().getInstance();
@@ -113,6 +129,11 @@ public class LoginController {
         logger.info("Window 'Catalog' created");
     }
 
+    /**
+     * Button, which is responsible for creating registration form.
+     * @param actionEvent
+     * @throws Exception
+     */
     public void registerButtonAction(ActionEvent actionEvent) throws Exception {
 
         ((Node)(actionEvent.getSource())).getScene().getWindow().hide();

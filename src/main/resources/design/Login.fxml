@@ -10,8 +10,8 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="design.LoginController">
    <children>
       <Button fx:id="btnLogin" layoutX="213.0" layoutY="303.0" mnemonicParsing="false" onAction="#loginButtonAction" text="Login" />
-      <PasswordField fx:id="txtPassword" layoutX="173.0" layoutY="239.0" onAction="#passwordTextButtonAction" prefHeight="31.0" prefWidth="254.0" promptText="Password" />
-      <TextField fx:id="txtUsername" layoutX="173.0" layoutY="169.0" onAction="#usernameTextButtonAction" prefHeight="31.0" prefWidth="254.0" promptText="Username" />
+      <PasswordField fx:id="txtPassword" layoutX="173.0" layoutY="239.0" prefHeight="31.0" prefWidth="254.0" promptText="Password" />
+      <TextField fx:id="txtUsername" layoutX="173.0" layoutY="169.0" prefHeight="31.0" prefWidth="254.0" promptText="Username" />
       <Button fx:id="btnGuest" layoutX="487.0" layoutY="52.0" mnemonicParsing="false" onAction="#guestAction" text="As a Guest" />
       <Label fx:id="lblMessage" alignment="CENTER" layoutX="99.0" layoutY="43.0" prefHeight="50.0" prefWidth="375.0" text="Welcome to the catalog!" textAlignment="CENTER" textOverrun="CLIP">
          <font>

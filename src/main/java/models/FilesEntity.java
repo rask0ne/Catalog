@@ -8,6 +8,10 @@ import java.util.Arrays;
 /**
  * Created by rask on 03.03.2017.
  */
+
+/**
+ * Entity for files table in the database.
+ */
 @Entity
 @Table(name = "files", schema = "catalogdb", catalog = "")
 public class FilesEntity {

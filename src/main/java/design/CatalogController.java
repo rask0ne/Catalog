@@ -7,8 +7,12 @@ import hibernate.Util.FileDataAccessor;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
@@ -38,19 +42,44 @@ import java.util.Calendar;
 /**
  * Created by rask on 01.03.2017.
  */
+
+/**
+ * Controller of 'Catalog' window.
+ */
 public class CatalogController {
 
+    /**
+     * Username from current session is shown here
+     */
     @FXML
     private Label lblTextMessage;
+    /**
+     * Field to imput string for search
+     */
     @FXML
     private TextField srchText;
+    /**
+     * Table where files are shown
+     */
     @FXML
     private TableView<FileRepository> tableView;
     @FXML
+    /**
+     * Button to upload file
+     */
     private Button uplButton;
     @FXML
+    /**
+     * Button to delete file
+     */
     private Button dltButton;
 
+    /**
+     * Method to initialize table with all files first time and
+     * change Label username info to current user
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     @FXML
     public void initialize() throws SQLException, ClassNotFoundException {
 
@@ -60,8 +89,19 @@ public class CatalogController {
 
     }
 
+    /**
+     * Logger class initialize
+     */
     private final Logger logger = Logger.getLogger(CatalogController.class);
 
+    /**
+     * Method to search files by entering string in Search TextField.
+     * This string imputs in overloaded method updateTableView(String);
+     *
+     * @param actionEvent
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     public void searchAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
         String text = srchText.getText();
@@ -70,6 +110,16 @@ public class CatalogController {
 
     }
 
+    /**
+     * Algorithm of uploading file to database. Same time in history table in database
+     * uploading info about data of upload, file size and who uploaded this file.
+     * In this methoh establishing connection to the database, checking limit to
+     * upload for current user and aploading file to files table
+     * @param actionEvent
+     * @throws SQLException
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public void uploadActionButton(ActionEvent actionEvent) throws SQLException, IOException, ClassNotFoundException {
         logger.info("Upload button pressed");
         if(!UserRepository.getInstance().getName().equals("guest")) {
@@ -148,6 +198,14 @@ public class CatalogController {
 
     }
 
+    /**
+     * Algorithm of deleting file from database by its name and username, who uploaded this file.
+     * Also there is a user role check, because admin has rights to delete all files, user
+     * may delete only his files, guest has not such rights.
+     * @param actionEvent
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     public void deleteActionButton(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
         FileRepository file = (FileRepository) tableView.getSelectionModel().getSelectedItem();
@@ -182,6 +240,12 @@ public class CatalogController {
 
     }
 
+    /**
+     * Method to refresh data in table after some manipulations with files database. Works
+     * after any changes such as uploading or deleting.
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     public void updateTableView() throws SQLException, ClassNotFoundException {
 
 
@@ -206,6 +270,13 @@ public class CatalogController {
 
     }
 
+    /**
+     * Overloaded method to refresh data after searching for some files. Gets string and then
+     * forms list according to this inquiry.
+     * @param name
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     public void updateTableView(String name) throws SQLException, ClassNotFoundException {
 
 
@@ -228,10 +299,36 @@ public class CatalogController {
         logger.info("TableView with found files updated");
     }
 
+    /**
+     * Button to open file.
+     * @param actionEvent
+     * @throws IOException
+     * @throws SQLException
+     */
     public void openButtonAction(ActionEvent actionEvent) throws IOException, SQLException {
 
         FileRepository file = (FileRepository) tableView.getSelectionModel().getSelectedItem();
         file.execution();
+
+    }
+
+    /**
+     * Button to change current user. Creates window 'Login'.
+     * @param actionEvent
+     * @throws IOException
+     */
+    public void changeUserButton(ActionEvent actionEvent) throws IOException {
+
+        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+
+        Parent parent = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.setTitle("Login");
+        stage.show();
+
+        logger.info("Created window 'Login' from changeUserButton");
 
     }
 }

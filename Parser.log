@@ -81,3 +81,172 @@
 2017-03-07 05:16:56 INFO  FileRepository:79 - File opened  successfully
 2017-03-07 05:16:56 INFO  FileRepository:82 - Connection to DB closed
 2017-03-07 05:35:33 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:32:04 INFO  Login:22 - Window 'Login' created
+2017-03-07 09:32:15 INFO  LoginController:42 - Login button pressed
+2017-03-07 09:32:16 INFO  LoginController:53 - Connection to DB established
+2017-03-07 09:32:16 INFO  LoginController:64 - User entered successfully
+2017-03-07 09:32:16 INFO  LoginController:74 - User singleton created
+2017-03-07 09:32:16 INFO  LoginController:77 - Connection to DB closed
+2017-03-07 09:32:16 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:32:16 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 09:32:16 INFO  CatalogController:207 - TableView updated
+2017-03-07 09:32:17 INFO  LoginController:89 - Window 'Catalog' created
+2017-03-07 09:32:19 INFO  CatalogController:250 - Created window 'Login'
+2017-03-07 09:32:28 INFO  LoginController:42 - Login button pressed
+2017-03-07 09:32:28 INFO  LoginController:53 - Connection to DB established
+2017-03-07 09:32:28 INFO  LoginController:64 - User entered successfully
+2017-03-07 09:32:28 INFO  LoginController:74 - User singleton created
+2017-03-07 09:32:28 INFO  LoginController:77 - Connection to DB closed
+2017-03-07 09:32:28 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:32:28 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 09:32:28 INFO  CatalogController:207 - TableView updated
+2017-03-07 09:32:29 INFO  LoginController:89 - Window 'Catalog' created
+2017-03-07 09:32:50 INFO  Login:22 - Window 'Login' created
+2017-03-07 09:33:41 INFO  Login:22 - Window 'Login' created
+2017-03-07 09:33:49 INFO  LoginController:42 - Login button pressed
+2017-03-07 09:33:50 INFO  LoginController:53 - Connection to DB established
+2017-03-07 09:33:50 INFO  LoginController:64 - User entered successfully
+2017-03-07 09:33:50 INFO  LoginController:74 - User singleton created
+2017-03-07 09:33:50 INFO  LoginController:77 - Connection to DB closed
+2017-03-07 09:33:50 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:33:50 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 09:33:50 INFO  CatalogController:208 - TableView updated
+2017-03-07 09:33:50 INFO  LoginController:89 - Window 'Catalog' created
+2017-03-07 09:34:03 INFO  CatalogController:253 - Created window 'Login' from changeUserButton
+2017-03-07 09:34:08 INFO  LoginController:42 - Login button pressed
+2017-03-07 09:34:08 INFO  LoginController:53 - Connection to DB established
+2017-03-07 09:34:08 INFO  LoginController:64 - User entered successfully
+2017-03-07 09:34:08 INFO  LoginController:74 - User singleton created
+2017-03-07 09:34:08 INFO  LoginController:77 - Connection to DB closed
+2017-03-07 09:34:08 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:34:08 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 09:34:08 INFO  CatalogController:208 - TableView updated
+2017-03-07 09:34:08 INFO  LoginController:89 - Window 'Catalog' created
+2017-03-07 09:34:11 INFO  CatalogController:159 - Selected file to delete
+2017-03-07 09:34:11 INFO  CatalogController:167 - Connection to DB established
+2017-03-07 09:34:11 INFO  CatalogController:177 - File deleted from DB
+2017-03-07 09:34:11 INFO  CatalogController:181 - Connection to DB closed
+2017-03-07 09:34:11 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:34:11 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 09:34:11 INFO  CatalogController:208 - TableView updated
+2017-03-07 09:34:15 INFO  CatalogController:159 - Selected file to delete
+2017-03-07 09:34:15 INFO  CatalogController:167 - Connection to DB established
+2017-03-07 09:34:15 INFO  CatalogController:177 - File deleted from DB
+2017-03-07 09:34:15 INFO  CatalogController:181 - Connection to DB closed
+2017-03-07 09:34:15 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:34:15 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 09:34:15 INFO  CatalogController:208 - TableView updated
+2017-03-07 09:34:31 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:34:31 INFO  FileDataAccessor:69 - Created list of files for tableView which were searched
+2017-03-07 09:34:31 INFO  CatalogController:232 - TableView with found files updated
+2017-03-07 09:34:34 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:34:34 INFO  FileDataAccessor:69 - Created list of files for tableView which were searched
+2017-03-07 09:34:34 INFO  CatalogController:232 - TableView with found files updated
+2017-03-07 09:34:38 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:34:38 INFO  FileDataAccessor:69 - Created list of files for tableView which were searched
+2017-03-07 09:34:38 INFO  CatalogController:232 - TableView with found files updated
+2017-03-07 09:34:39 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:34:39 INFO  FileDataAccessor:69 - Created list of files for tableView which were searched
+2017-03-07 09:34:39 INFO  CatalogController:232 - TableView with found files updated
+2017-03-07 09:34:41 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:34:41 INFO  FileDataAccessor:69 - Created list of files for tableView which were searched
+2017-03-07 09:34:41 INFO  CatalogController:232 - TableView with found files updated
+2017-03-07 09:35:43 INFO  Login:22 - Window 'Login' created
+2017-03-07 09:35:53 INFO  LoginController:110 - Guest entering DB, created singleton 'guest'
+2017-03-07 09:35:54 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:35:54 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 09:35:54 INFO  CatalogController:208 - TableView updated
+2017-03-07 09:35:54 INFO  Catalog:28 - Window 'Catalog' created
+2017-03-07 09:35:54 INFO  LoginController:113 - Window 'Catalog' created
+2017-03-07 09:35:56 INFO  FileRepository:56 - Connection to DB established
+2017-03-07 09:35:56 INFO  FileRepository:79 - File opened  successfully
+2017-03-07 09:35:56 INFO  FileRepository:82 - Connection to DB closed
+2017-03-07 09:36:03 INFO  CatalogController:78 - Upload button pressed
+2017-03-07 09:36:06 INFO  CatalogController:78 - Upload button pressed
+2017-03-07 09:36:06 INFO  CatalogController:78 - Upload button pressed
+2017-03-07 09:36:07 INFO  CatalogController:253 - Created window 'Login' from changeUserButton
+2017-03-07 09:36:12 INFO  LoginController:42 - Login button pressed
+2017-03-07 09:36:12 INFO  LoginController:53 - Connection to DB established
+2017-03-07 09:36:12 INFO  LoginController:64 - User entered successfully
+2017-03-07 09:36:12 INFO  LoginController:74 - User singleton created
+2017-03-07 09:36:12 INFO  LoginController:77 - Connection to DB closed
+2017-03-07 09:36:12 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:36:12 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 09:36:12 INFO  CatalogController:208 - TableView updated
+2017-03-07 09:36:12 INFO  LoginController:89 - Window 'Catalog' created
+2017-03-07 09:36:13 INFO  CatalogController:78 - Upload button pressed
+2017-03-07 09:36:13 INFO  CatalogController:83 - User tries to upload file
+2017-03-07 09:36:13 INFO  CatalogController:102 - User has some free space today
+2017-03-07 09:36:36 INFO  CatalogController:120 - File selected
+2017-03-07 09:36:36 INFO  CatalogController:130 - File uploaded into database
+2017-03-07 09:36:36 INFO  CatalogController:141 - Saved info about this upload session
+2017-03-07 09:36:36 INFO  CatalogController:145 - Connection to DB closed
+2017-03-07 09:36:36 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:36:36 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 09:36:36 INFO  CatalogController:208 - TableView updated
+2017-03-07 09:36:38 INFO  FileRepository:56 - Connection to DB established
+2017-03-07 09:36:38 INFO  FileRepository:79 - File opened  successfully
+2017-03-07 09:36:38 INFO  FileRepository:82 - Connection to DB closed
+2017-03-07 09:41:53 INFO  Login:22 - Window 'Login' created
+2017-03-07 09:42:10 INFO  LoginController:42 - Login button pressed
+2017-03-07 09:42:11 INFO  LoginController:53 - Connection to DB established
+2017-03-07 09:42:11 INFO  LoginController:64 - User entered successfully
+2017-03-07 09:42:11 INFO  LoginController:74 - User singleton created
+2017-03-07 09:42:11 INFO  LoginController:77 - Connection to DB closed
+2017-03-07 09:42:11 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:42:11 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 09:42:11 INFO  CatalogController:208 - TableView updated
+2017-03-07 09:42:11 INFO  LoginController:89 - Window 'Catalog' created
+2017-03-07 09:42:14 INFO  CatalogController:78 - Upload button pressed
+2017-03-07 09:42:14 INFO  CatalogController:83 - User tries to upload file
+2017-03-07 09:42:14 INFO  CatalogController:102 - User has some free space today
+2017-03-07 09:42:23 INFO  CatalogController:120 - File selected
+2017-03-07 09:42:23 INFO  CatalogController:130 - File uploaded into database
+2017-03-07 09:42:23 INFO  CatalogController:141 - Saved info about this upload session
+2017-03-07 09:42:23 INFO  CatalogController:145 - Connection to DB closed
+2017-03-07 09:42:23 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:42:23 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 09:42:23 INFO  CatalogController:208 - TableView updated
+2017-03-07 09:42:29 INFO  CatalogController:159 - Selected file to delete
+2017-03-07 09:42:29 INFO  CatalogController:167 - Connection to DB established
+2017-03-07 09:42:29 INFO  CatalogController:177 - File deleted from DB
+2017-03-07 09:42:29 INFO  CatalogController:181 - Connection to DB closed
+2017-03-07 09:42:29 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:42:29 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 09:42:29 INFO  CatalogController:208 - TableView updated
+2017-03-07 09:42:33 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:42:33 INFO  FileDataAccessor:69 - Created list of files for tableView which were searched
+2017-03-07 09:42:33 INFO  CatalogController:232 - TableView with found files updated
+2017-03-07 09:42:35 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:42:35 INFO  FileDataAccessor:69 - Created list of files for tableView which were searched
+2017-03-07 09:42:35 INFO  CatalogController:232 - TableView with found files updated
+2017-03-07 09:42:37 INFO  CatalogController:253 - Created window 'Login' from changeUserButton
+2017-03-07 09:42:43 INFO  LoginController:42 - Login button pressed
+2017-03-07 09:42:43 INFO  LoginController:53 - Connection to DB established
+2017-03-07 09:42:43 INFO  LoginController:64 - User entered successfully
+2017-03-07 09:42:43 INFO  LoginController:74 - User singleton created
+2017-03-07 09:42:43 INFO  LoginController:77 - Connection to DB closed
+2017-03-07 09:42:43 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:42:43 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 09:42:43 INFO  CatalogController:208 - TableView updated
+2017-03-07 09:42:43 INFO  LoginController:89 - Window 'Catalog' created
+2017-03-07 09:42:57 INFO  FileRepository:56 - Connection to DB established
+2017-03-07 09:42:57 INFO  FileRepository:79 - File opened  successfully
+2017-03-07 09:42:57 INFO  FileRepository:82 - Connection to DB closed
+2017-03-07 09:43:17 INFO  CatalogController:159 - Selected file to delete
+2017-03-07 09:43:17 INFO  CatalogController:167 - Connection to DB established
+2017-03-07 09:43:17 INFO  CatalogController:177 - File deleted from DB
+2017-03-07 09:43:17 INFO  CatalogController:181 - Connection to DB closed
+2017-03-07 09:43:17 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:43:17 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 09:43:17 INFO  CatalogController:208 - TableView updated
+2017-03-07 09:43:20 INFO  CatalogController:253 - Created window 'Login' from changeUserButton
+2017-03-07 09:43:20 INFO  LoginController:110 - Guest entering DB, created singleton 'guest'
+2017-03-07 09:43:20 INFO  FileDataAccessor:28 - Connection to DB establihed
+2017-03-07 09:43:20 INFO  FileDataAccessor:49 - Created full list of file for tableView
+2017-03-07 09:43:20 INFO  CatalogController:208 - TableView updated
+2017-03-07 09:43:20 INFO  Catalog:28 - Window 'Catalog' created
+2017-03-07 09:43:20 INFO  LoginController:113 - Window 'Catalog' created
+2017-03-07 09:43:22 INFO  FileRepository:56 - Connection to DB established
+2017-03-07 09:43:22 INFO  FileRepository:79 - File opened  successfully
+2017-03-07 09:43:22 INFO  FileRepository:82 - Connection to DB closed

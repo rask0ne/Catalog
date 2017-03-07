@@ -5,6 +5,10 @@ import models.UsersEntity;
 /**
  * Created by rask on 03.03.2017.
  */
+
+/**
+ * User singleton class to keep information during programm work.
+ */
 public class UserRepository {
 
     private static UserRepository instance = null;

@@ -10,6 +10,10 @@ import org.apache.log4j.Logger;
 /**
  * Created by rask on 01.03.2017.
  */
+
+/**
+ * Logic of 'Register' window.
+ */
 public class Register extends Application {
 
     private final Logger logger = Logger.getLogger(Register.class);

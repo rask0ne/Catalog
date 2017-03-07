@@ -23,5 +23,6 @@
             <Font name="System Bold Italic" size="34.0" />
          </font></Label>
       <Button fx:id="opnFileBtn" layoutX="549.0" layoutY="309.0" mnemonicParsing="false" onAction="#openButtonAction" prefHeight="31.0" prefWidth="95.0" text="Open File" />
+      <Button fx:id="chngUsr" layoutX="722.0" layoutY="486.0" mnemonicParsing="false" onAction="#changeUserButton" text="Change User" />
     </children>
 </AnchorPane>
