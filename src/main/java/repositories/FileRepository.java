@@ -1,7 +1,16 @@
 package repositories;
 
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+
+import java.awt.*;
+import java.io.*;
+import java.sql.Blob;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * Created by rask on 03.03.2017.
@@ -35,6 +44,39 @@ public class FileRepository {
     public FileRepository(String fileName, String username) {
         setFileName(fileName);
         setUsername(username);
+    }
+
+    public void execution() throws SQLException, IOException {
+
+        Connection conn = (Connection) DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/catalogdb?autoReconnect=true&useSSL=false", "root", "root");
+        String sql = "SELECT file FROM files WHERE filename =? AND username=?";
+        PreparedStatement statement = (PreparedStatement) conn.prepareStatement(sql);
+        statement.setString(1, getFileName());
+        statement.setString(2, getUsername());
+
+        ResultSet result = statement.executeQuery();
+        if (result.next()) {
+            Blob blob = result.getBlob("file");
+            InputStream inputStream = blob.getBinaryStream();
+            OutputStream outputStream = new FileOutputStream("E:/temp/" + getFileName());
+
+            int bytesRead = -1;
+            byte[] buffer = new byte[(int)blob.length()];
+            while ((bytesRead = inputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, bytesRead);
+            }
+
+            inputStream.close();
+            outputStream.close();
+
+            File file = new File("E:/temp/" + getFileName());
+            Desktop.getDesktop().open(file);
+
         }
+        conn.close();
+
+    }
+
 
 }

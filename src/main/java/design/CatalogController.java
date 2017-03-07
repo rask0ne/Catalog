@@ -4,11 +4,14 @@ package design;
 import com.mysql.jdbc.Connection;
 import hibernate.Util.FileDataAccessor;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -63,13 +66,10 @@ public class CatalogController {
 
     public void uploadActionButton(ActionEvent actionEvent) throws SQLException, IOException, ClassNotFoundException {
 
-        //String updateSQL = "UPDATE files " + "SET file = ? " + "WHERE userid=?";
+       if(!UserRepository.getInstance().getName().equals("guest")) {
+           Connection con = (Connection) DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/catalogdb?autoReconnect=true&useSSL=false", "root", "root");
 
-
-        //try  {
-        Connection con = (Connection) DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/catalogdb?autoReconnect=true&useSSL=false", "root", "root");
-       // con.setAutoCommit(false);
 
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Open Resource File");
@@ -79,62 +79,24 @@ public class CatalogController {
                     new FileChooser.ExtensionFilter("Audio Files", "*.wav", "*.mp3", "*.aac"),
                     new FileChooser.ExtensionFilter("All Files", "*.*"));
 
-            Group root = new Group();
-            final Stage mainStage = null;
-            //mainStage.setScene(new Scene(root, 500, 400));
-           // mainStage.show();
             File selectedFile = fileChooser.showOpenDialog(/*root.getScene().getWindow()*/new Stage());
             FileInputStream inputStream = new FileInputStream(selectedFile);
-            byte[] array = new byte[(int)selectedFile.length()];
+            byte[] array = new byte[(int) selectedFile.length()];
             inputStream.read(array);
 
 
             String query = "insert into files (filename, file, username)" + " values (?, ?, ?)";
-            PreparedStatement pstmt = (PreparedStatement)con.prepareStatement(query);
+            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(query);
             pstmt.setString(1, selectedFile.getName());
             pstmt.setBytes(2, array);
             pstmt.setString(3, UserRepository.getInstance().getName());
 
-            /*Statement stmt = (Statement) conn.createStatement();
-            String query = "SELECT Id, Connected FROM users;";
-            stmt.executeQuery(query);
-            ResultSet rs = stmt.getResultSet();
+            pstmt.execute();
 
-            int id = 0;
-            while (rs.next()) {
-                int count = rs.getInt("connected");
-                if (count == 1) {
-                    id = rs.getInt("id");
-                    break;
-                }
-            }*/
+            con.close();
 
-       /* FilesEntity file_ = new FilesEntity();
-
-        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-
-        file_.setFile(array);
-        file_.setFilename(selectedFile.getName());
-        file_.setUserId(UserRepository.getInstance().user.getId());
-
-        //Save the employee in database
-        session.save(file_);
-
-        //Commit the transaction
-        session.getTransaction().commit();
-        session.close();*/
-
-
-        pstmt.execute();
-
-//            con.commit();
-
-        con.close();
-
-        updateTableView();
-
+            updateTableView();
+        }
 
     }
 
@@ -206,4 +168,13 @@ public class CatalogController {
         tableView.getItems().addAll(dataAccessor.getSearchFileList(name));
 
     }
+
+    public void openButtonAction(ActionEvent actionEvent) throws IOException, SQLException {
+
+        FileRepository file = (FileRepository) tableView.getSelectionModel().getSelectedItem();
+        file.execution();
+
+    }
 }
+
+
